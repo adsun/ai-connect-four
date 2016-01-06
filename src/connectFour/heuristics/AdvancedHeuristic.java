@@ -5,7 +5,7 @@ import java.util.Arrays;
 import connectFour.ConnectFourState;
 import connectFour.ConnectFourState.FieldState;
 
-public class ExperimentalHeuristic extends Heuristic {
+public class AdvancedHeuristic extends Heuristic {
 	
 	private boolean log;
 	//private double[] weights =  {2000,10,10,5,5,2,0.1};
@@ -13,23 +13,24 @@ public class ExperimentalHeuristic extends Heuristic {
 	/**
 	 * Default weights
 	 */
-	private double[] weights = {2000, 100, 50, 100, 50, 5, 1};
+	//private double[] weights = {2000, 100, 50, 100, 50, 5, 1};
+	private double[] weights = {5, 5, 5, 5, 5, 5, 1};
 	
 	
-	public ExperimentalHeuristic() {
+	public AdvancedHeuristic() {
 		log = false;
 	}
 	
-	public ExperimentalHeuristic(boolean log) {
+	public AdvancedHeuristic(boolean log) {
 		this.log = log;
 	}
 	
-	public ExperimentalHeuristic(double[] weights) {
+	public AdvancedHeuristic(double[] weights) {
 		this.log = false;
 		this.weights = weights;
 	}
 	
-	public ExperimentalHeuristic(double[] weights, boolean log) {
+	public AdvancedHeuristic(double[] weights, boolean log) {
 		this.log = log;
 		this.weights = weights;
 	}

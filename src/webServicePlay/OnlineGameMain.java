@@ -1,7 +1,7 @@
 package webServicePlay;
 
 import connectFour.heuristics.BasicHeuristic;
-import connectFour.heuristics.ExperimentalHeuristic;
+import connectFour.heuristics.AdvancedHeuristic;
 import connectFour.heuristics.Heuristic;
 
 public class OnlineGameMain {
@@ -16,7 +16,7 @@ public class OnlineGameMain {
 		String gameID = null;
 		boolean join = false;
 		int depth = 7;
-		Heuristic heuristic = new ExperimentalHeuristic();
+		Heuristic heuristic = new AdvancedHeuristic();
 		
 		
 		//Parse options

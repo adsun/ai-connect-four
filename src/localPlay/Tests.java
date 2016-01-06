@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 import connectFour.ConnectFourProblem;
 import connectFour.ConnectFourState;
-import connectFour.heuristics.ExperimentalHeuristic;
+import connectFour.heuristics.BasicHeuristic;
+import connectFour.heuristics.AdvancedHeuristic;
+import connectFour.heuristics.ExpertHeuristic;
 import connectFour.heuristics.Heuristic;
 import search.Action;
 import search.AlphaBetaSearch;
@@ -18,10 +20,10 @@ public class Tests {
 		// TODO Auto-generated method stub
 		//State[][][][] results = new State[2][2][8][8];
 		//analyseAIs();
-		//AiVsPlayer(new ExperimentalHeuristic(),7);
+		AiVsPlayer(new AdvancedHeuristic(),7);
 		//System.out.println("Runnig");
-		analyseHeuristics(new ExperimentalHeuristic(), new ExperimentalHeuristic(), 0, 7);
-		//aiVsAi(new ExperimentalHeuristic(), new ExperimentalHeuristic(), 5, 7,true);
+		//analyseHeuristics(new ExperimentalHeuristic(), new ExperimentalHeuristic(), 0, 3);
+		//aiVsAi(new BasicHeuristic(), new ExperimentalHeuristic({1,1,1,1,1,1}), 7, 7,true);
 		//AiVsRandom(6, 5);
 		
 	}

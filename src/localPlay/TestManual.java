@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import connectFour.ConnectFourProblem;
 import connectFour.ConnectFourState;
-import connectFour.heuristics.ExperimentalHeuristic;
+import connectFour.heuristics.AdvancedHeuristic;
 import search.Action;
 import search.AlphaBetaSearch;
 import search.State;
@@ -48,7 +48,7 @@ public class TestManual {
 	
 	private static void debugAlphaBeta(){
 		//double 
-		ConnectFourProblem p = new ConnectFourProblem(ConnectFourState.FieldState.RED, new ExperimentalHeuristic());
+		ConnectFourProblem p = new ConnectFourProblem(ConnectFourState.FieldState.RED, new AdvancedHeuristic());
 		State s = p.getInitialState();
 		ArrayList<Action> actions = p.getActions(s);
 		AlphaBetaSearch search = new AlphaBetaSearch(p, 0);
@@ -73,8 +73,8 @@ public class TestManual {
 		
 	private static void playActions(int[] actionsX, int[] actionsO){
 		if(actionsX.length != actionsO.length) return;
-		ExperimentalHeuristic h = new ExperimentalHeuristic(true);
-		ConnectFourProblem p = new ConnectFourProblem(ConnectFourState.FieldState.RED, new ExperimentalHeuristic());
+		AdvancedHeuristic h = new AdvancedHeuristic(true);
+		ConnectFourProblem p = new ConnectFourProblem(ConnectFourState.FieldState.RED, new AdvancedHeuristic());
 		State s = p.getInitialState();
 		ArrayList<Action> actions = p.getActions(s);
 		

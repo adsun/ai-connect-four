@@ -1,7 +1,7 @@
 package search;
 
 import connectFour.ConnectFourState;
-import connectFour.heuristics.ExperimentalHeuristic;
+import connectFour.heuristics.AdvancedHeuristic;
 
 
 public class AlphaBetaSearch {
@@ -40,17 +40,17 @@ public class AlphaBetaSearch {
 	
 	
 	public Action search(State state){
-		ExperimentalHeuristic h = null;
-		if(weights!= null) h = new ExperimentalHeuristic(weights,true);
+		AdvancedHeuristic h = null;
+		if(weights!= null) h = new AdvancedHeuristic(weights,true);
 		Action maxAction = null;
 		double maxValue = Double.NEGATIVE_INFINITY;
-		System.out.println("SEARCHING######################");
+		//System.out.println("SEARCHING######################");
 		for(Action a : problem.getActions(state)){
 			double v = minV(a.execute(state), Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, maxDepth);
 			if(weights!=null) System.out.println("MaxV: " + v +" Eval: " +h.evaluate((ConnectFourState)a.execute(state), ((ConnectFourState)state).turn));
-			else System.out.println("MaxV: " + v);
+			//else System.out.println("MaxV: " + v);
 			//h.evaluate(a.execute(state));
-			System.out.println(a.execute(state));
+			//System.out.println(a.execute(state));
 			if(v > maxValue){
 				//System.out.println("New max Action:"+a+"  v: "+v);
 				maxValue = v;

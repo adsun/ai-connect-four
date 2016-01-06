@@ -11,9 +11,9 @@ import org.json.JSONObject;
 import connectFour.ConnectFourProblem;
 import connectFour.ConnectFourState;
 import connectFour.heuristics.BasicHeuristic;
-import connectFour.heuristics.ExperimentalHeuristic;
+import connectFour.heuristics.AdvancedHeuristic;
+import connectFour.heuristics.ExpertHeuristic;
 import connectFour.heuristics.Heuristic;
-import connectFour.heuristics.deprecated.AdvancedHeuristic;
 import connectFour.heuristics.deprecated.ExpertUtility;
 import connectFour.heuristics.deprecated.ExpertUtility2;
 import search.Action;
@@ -44,12 +44,12 @@ public class OnlinePlayer {
 		     public void run() {
 		    	 OnlinePlayer p = createPlayer("testId1", "testName1", "g08", baseURL);
 		    	 //p.playGame(gameID, baseURL, new ExperimentalHeuristic(),7);
-		    	 p.playGame(gameID, baseURL, new ExperimentalHeuristic(),7);
+		    	 p.playGame(gameID, baseURL, new BasicHeuristic(),7);
 		     }
 		});  
 		t1.start();
 		
-		
+		/*
 		try {
 			Thread.sleep(2000);
 			System.out.println("Enter to add 2nd player!");
@@ -65,11 +65,11 @@ public class OnlinePlayer {
 		Thread t2 = new Thread(new Runnable() {
 		     public void run() {
 		    	 OnlinePlayer p2 = createPlayer("testId2", "testName2", "g08", baseURL);
-		    	 p2.playGame(gameID, baseURL, new ExperimentalHeuristic(), 0);
+		    	 p2.playGame(gameID, baseURL, new ExperimentalHeuristic2(), 7);
 		     }
 		});  
 		t2.start();
-		
+		*/
 	}
 	
 
