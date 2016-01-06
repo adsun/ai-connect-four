@@ -5,7 +5,7 @@ import java.util.Arrays;
 import connectFour.ConnectFourState;
 import connectFour.ConnectFourState.FieldState;
 
-public class AdvancedHeuristic extends Heuristic {
+public class ExpertHeuristic2 extends Heuristic {
 	
 	private boolean log;
 	//private double[] weights =  {2000,10,10,5,5,2,0.1};
@@ -13,24 +13,23 @@ public class AdvancedHeuristic extends Heuristic {
 	/**
 	 * Default weights
 	 */
-	//private double[] weights = {2000, 100, 50, 100, 50, 5, 1};
-	private double[] weights = {10, 5, 5, 5, 5, 5, 1};
+	private double[] weights = {2000, 100, 50, 100, 50, 5, 1};
 	
 	
-	public AdvancedHeuristic() {
+	public ExpertHeuristic2() {
 		log = false;
 	}
 	
-	public AdvancedHeuristic(boolean log) {
+	public ExpertHeuristic2(boolean log) {
 		this.log = log;
 	}
 	
-	public AdvancedHeuristic(double[] weights) {
+	public ExpertHeuristic2(double[] weights) {
 		this.log = false;
 		this.weights = weights;
 	}
 	
-	public AdvancedHeuristic(double[] weights, boolean log) {
+	public ExpertHeuristic2(double[] weights, boolean log) {
 		this.log = log;
 		this.weights = weights;
 	}
@@ -53,7 +52,7 @@ public class AdvancedHeuristic extends Heuristic {
 		int threats[] = new int[7];
 		double attackWeights[] = {1,1,1,1,1,1,1};
 		//double threatWeights[] = {1,1,1,1,1,1,1};
-		double threatWeights[] = {1,1,1,1,1,1,1};
+		double threatWeights[] = {1.1,1.1,1.1,1.1,1.1,0,0};
 		//Iterate over all fields.
 		//Count each kind of threat for the empty fields.
 		ConnectFourState.FieldState color;

@@ -1,6 +1,7 @@
 package webServicePlay;
 
 import connectFour.heuristics.BasicHeuristic;
+import connectFour.heuristics.ExpertHeuristic;
 import connectFour.heuristics.AdvancedHeuristic;
 import connectFour.heuristics.Heuristic;
 
@@ -16,7 +17,7 @@ public class OnlineGameMain {
 		String gameID = null;
 		boolean join = false;
 		int depth = 7;
-		Heuristic heuristic = new AdvancedHeuristic();
+		Heuristic heuristic = new ExpertHeuristic();
 		
 		
 		//Parse options
@@ -49,7 +50,8 @@ public class OnlineGameMain {
 			}
 			
 			if(args[i].equals("-h")){
-				if(args[i+1].equals("1")) heuristic = new BasicHeuristic();
+				if(args[i+1].equals("1")) heuristic = new AdvancedHeuristic();
+				else if(args[i+1].equals("2")) heuristic = new BasicHeuristic();
 			}
 
 		}
@@ -73,7 +75,7 @@ public class OnlineGameMain {
 		System.out.println("\t -c [id] [name] [author] | Creates, registers and stores player");
 		System.out.println("\t -j [gameId] | joins game with given id or the created game if -g was added before!");
 		System.out.println("\t -d [depth] | sets the search depth. Default 7.");
-		System.out.println("\t -h [heuristic(0,1)] | 0: expert (default), 1: basic");
+		System.out.println("\t -h [heuristic(0,1)] | 0: expert (default), 1: advanced, 2: basic");
 	}
 
 }
